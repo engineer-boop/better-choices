@@ -1,0 +1,360 @@
+:root{
+  --sage: #7C9473;
+  --sage-deep: #5E7A54;
+  --sage-light: #E3EADD;
+  --cream: #F7F1E4;
+  --cream-dark: #EFE5D0;
+  --paper-line: #E3D8C0;
+  --brown: #4A3B31;
+  --brown-soft: #6E5C4D;
+  --brown-mute: #8A7969;
+  --blue: #7FAFC4;
+  --blue-light: #E1EEF3;
+  --orange: #E08E4C;
+  --orange-deep: #C97538;
+  --shadow: rgba(74, 59, 49, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+html, body{
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Karla', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 1px 1px, rgba(74,59,49,0.05) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* ---------- HEADER ---------- */
+.brand h1{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: var(--brown);
+  letter-spacing: -0.5px;
+}
+
+.brand .tagline{
+  font-style: italic;
+  color: var(--brown-mute);
+  font-size: 1rem;
+}
+
+.brand .today{
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  color: var(--sage-deep);
+  font-weight: 600;
+}
+
+.streak-badge{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 118px;
+  flex-shrink: 0;
+}
+.streak-badge svg{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.streak-badge .circle{
+  fill: var(--cream-dark);
+  stroke: var(--orange);
+  stroke-width: 2.5;
+  stroke-dasharray: 4 3;
+}
+.streak-content{ position: relative; text-align: center; line-height: 1.1; }
+.streak-content .flame{ font-size: 1.5rem; display: block; }
+.streak-content .num{
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--orange-deep);
+  display: block;
+}
+.streak-content .label{
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brown-mute);
+  display: block;
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+/* ---------- CARDS ---------- */
+.app-card{
+  background: #FFFDF8;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 3px 14px var(--shadow);
+}
+
+.app-card .card-title{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--brown);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.card-title .dot{
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--sage);
+  display: inline-block;
+}
+
+/* ---------- WEEKLY SUMMARY ---------- */
+.stat-row{
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--paper-line);
+}
+.stat-row:nth-of-type(4){ border-bottom: none; }
+
+.stat-row .stat-label{
+  font-size: 0.88rem;
+  color: var(--brown-soft);
+}
+.stat-row .stat-value{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--sage-deep);
+}
+.stat-row.soft .stat-value{ color: var(--orange-deep); }
+.stat-row.water .stat-value{ color: var(--blue); }
+
+.weight-line{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--paper-line);
+}
+.weight-track{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+.weight-track .arrow{ color: var(--sage); font-family: 'Karla', sans-serif; font-size: 1rem; }
+.weight-track .down{ color: var(--sage-deep); }
+.weight-track .up{ color: var(--orange-deep); }
+
+.btn-sage{
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-sage:hover{ background: var(--sage-deep); border-color: var(--sage-deep); color: #fff; }
+
+.weight-note{ font-size: 0.72rem; color: var(--brown-mute); margin-top: 6px; }
+
+.height-line{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--paper-line);
+}
+.height-track{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+.height-track .arrow{ color: var(--sage); font-family: 'Karla', sans-serif; font-size: 1rem; }
+.height-track .down{ color: var(--sage-deep); }
+.height-track .up{ color: var(--orange-deep); }
+
+.btn-sage{
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-sage:hover{ background: var(--sage-deep); border-color: var(--sage-deep); color: #fff; }
+
+.height-note{ font-size: 0.72rem; color: var(--brown-mute); margin-top: 6px; }
+
+/* ---------- CHECK-IN ---------- */
+.checkin-card{
+  background: #FFFDF8;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 43px,
+    var(--paper-line) 43px, var(--paper-line) 44px
+  );
+  background-position: 0 92px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 3px 14px var(--shadow);
+  padding: 26px 26px 24px 40px;
+}
+
+.checkin-card::before{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 30px;
+  width: 1px;
+  background: rgba(224,142,76,0.35);
+}
+
+.checkin-card::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 22px;
+  background-image: radial-gradient(circle, var(--cream) 4px, transparent 4.5px);
+  background-size: 34px 22px;
+  background-position: 10px 0;
+  background-repeat: repeat-x;
+  border-bottom: 1px dashed var(--paper-line);
+}
+
+.checkin-top{ margin-top: 14px; margin-bottom: 6px; }
+
+.eyebrow{
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  font-weight: 700;
+}
+
+.checkin-card h2{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--brown);
+}
+
+.checkin-progress{
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--sage-deep);
+  font-weight: 700;
+}
+
+.checklist{
+  list-style: none;
+  margin: 14px 0 4px 0;
+  padding: 0;
+}
+
+.check-item{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check-item input{
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+
+.box{
+  width: 24px; height: 24px;
+  flex-shrink: 0;
+  border: 2px solid var(--brown-mute);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, background .2s, transform .15s;
+  background: var(--cream);
+}
+
+.box svg{ width: 16px; height: 16px; overflow: visible; }
+.box .tick{
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset .28s ease;
+}
+
+.check-item input:checked + .box{
+  background: var(--sage);
+  border-color: var(--sage-deep);
+  transform: rotate(-2deg) scale(1.03);
+}
+.check-item input:checked + .box .tick{ stroke-dashoffset: 0; }
+
+.check-item input:focus-visible + .box{
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.check-item .item-label{
+  font-size: 0.98rem;
+  color: var(--brown);
+  transition: color .2s, opacity .2s;
+}
+.check-item input:checked ~ .item-label{
+  color: var(--sage-deep);
+  text-decoration: line-through;
+  text-decoration-color: var(--sage);
+  opacity: 0.75;
+}
+
+.checklist li:nth-child(odd){ transform: rotate(-0.15deg); }
+.checklist li:nth-child(even){ transform: rotate(0.15deg); }
+
+.divider-note{
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--paper-line);
+}
+
+.water-toggle{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--blue);
+  background: var(--blue-light);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--brown);
+  transition: background .2s, box-shadow .2s;
+  position: relative;
+}
+.water-toggle input{ position: absolute; opacity: 0; width: 0; height: 0; }
+.water-toggle input:checked ~ .wt-text{ font-weight: 700; color: #2C6E8C; }
+.water-toggle:has(input:checked){ background: var(--blue); box-shadow: 0 2px 8px rgba(127,175,196,0.4); }
+.water-toggle:has(input:checked) .wt-text{ color: #fff; }
+
+.save-hint{
+  font-size: 0.76rem;
+  color: var(--brown-mute);
+  font-style: italic;
+}
+
+footer{
+  font-size: 0.78rem;
+  color: var(--brown-mute);
+  font-style: italic;
+}

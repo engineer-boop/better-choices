@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Better Choices</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Our theme, loaded after Bootstrap so it can override -->
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+
+  <!-- HEADER -->
+  <header class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+    <div class="brand">
+      <h1 class="mb-1">Better Choices</h1>
+      <p class="tagline mb-1">Small choices today. Better health tomorrow.</p>
+      <p class="today mb-0" id="todayLabel">—</p>
+    </div>
+
+    <div class="streak-badge">
+      <svg viewBox="0 0 118 118"><circle class="circle" cx="59" cy="59" r="52"/></svg>
+      <div class="streak-content">
+        <span class="flame">🔥</span>
+        <span class="num" id="streakNum">0</span>
+        <span class="label">days with better choices</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="row g-4">
+
+    <!-- LEFT: WEEKLY SUMMARY -->
+    <div class="col-12 col-lg-4">
+      <div class="card app-card h-100">
+        <div class="card-body">
+          <h2 class="card-title"><span class="dot"></span>This Week</h2>
+
+          <div class="stat-row soft d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Instant Noodles</span>
+            <span class="stat-value" id="sumNoodles">0</span>
+          </div>
+          <div class="stat-row soft d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Hotdog</span>
+            <span class="stat-value" id="sumHotdog">0</span>
+          </div>
+          <div class="stat-row soft d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Soft Drink</span>
+            <span class="stat-value" id="sumSoftdrink">0</span>
+          </div>
+          <div class="stat-row soft d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Juice</span>
+            <span class="stat-value" id="sumJuice">0</span>
+          </div>
+          <div class="stat-row soft d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Junk Food</span>
+            <span class="stat-value" id="sumJunkfood">0</span>
+          </div>
+          <div class="stat-row soft d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Chocolate</span>
+            <span class="stat-value" id="sumChocolate">0</span>
+          </div>
+          <div class="stat-row water d-flex justify-content-between align-items-baseline">
+            <span class="stat-label">Water Goal</span>
+            <span class="stat-value" id="sumWater">0</span>
+          </div>
+
+          <div class="weight-line">
+            <span class="stat-label d-block mb-1">Weight</span>
+            <div class="weight-track" id="weightTrack">— → —</div>
+            <div class="weight-input d-flex gap-2 mt-2">
+              <input type="number" step="0.1" class="form-control form-control-sm" id="weightInput" placeholder="kg today">
+              <button class="btn btn-sage btn-sm" id="weightSave">Log</button>
+            </div>
+            <div class="weight-note">Logs today's weight for this week's trend.</div>
+          </div>
+            <div class="height-line">
+            <span class="stat-label d-block mb-1">Height</span>
+            <div class="height-track" id="heightTrack">— → —</div>
+            <div class="height-input d-flex gap-2 mt-2">
+              <input type="number" step="0.1" class="form-control form-control-sm" id="heightInput" placeholder="cm today">
+              <button class="btn btn-sage btn-sm" id="heightSave">Log</button>
+            </div>
+            <div class="height-note">Logs today's height for this week's trend.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: CHECK-IN -->
+    <div class="col-12 col-lg-8">
+      <div class="checkin-card">
+        <div class="checkin-top d-flex justify-content-between align-items-baseline flex-wrap gap-2">
+          <div>
+            <div class="eyebrow">Check-In</div>
+            <h2 class="mb-0">Today's Choices</h2>
+          </div>
+          <div class="checkin-progress" id="checkedCount">0 marked</div>
+        </div>
+
+        <ul class="checklist" id="checklist"></ul>
+
+        <div class="divider-note d-flex align-items-center flex-wrap gap-3">
+          <label class="water-toggle">
+            <input type="checkbox" id="waterToggle">
+            <span>💧</span>
+            <span class="wt-text">Hit my water goal today</span>
+          </label>
+          <span class="save-hint">Tap an item to mark it — saved automatically.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="text-center mt-5">Kept privately on this device · one honest check-in at a time</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
